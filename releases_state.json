@@ -282,5 +282,62 @@
       "assets": [],
       "error": "Download error: 403 Client Error: Forbidden for url: https://s3.amazonaws.com/kindle-src/11_3.0.1_Emulator_1_34_src.tar.gz"
     }
+  ],
+  "ks-kindle-scribe-colorsoft-1st--72c6c9ab": [
+    {
+      "filename": "Kindle_src_5.19.6_4832260042.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.19.6_4832260042.tar.gz",
+      "version": "5.19.6",
+      "build": "4832260042",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.19.6_4832260042.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.19.5_4794260058.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.19.5_4794260058.tar.gz",
+      "version": "5.19.5",
+      "build": "4794260058",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.19.5_4794260058.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.19.4.0.1_4767220003.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.19.4.0.1_4767220003.tar.gz",
+      "version": "5.19.4.0.1",
+      "build": "4767220003",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.19.4.0.1_4767220003.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.19.3.0.1_4723050002.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.19.3.0.1_4723050002.tar.gz",
+      "version": "5.19.3.0.1",
+      "build": "4723050002",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.19.3.0.1_4723050002.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.19.2_4670780040.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.19.2_4670780040.tar.gz",
+      "version": "5.19.2",
+      "build": "4670780040",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.19.2_4670780040.tar.gz"
+      ],
+      "error": null
+    }
   ]
 }

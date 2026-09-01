@@ -339,5 +339,62 @@
       ],
       "error": null
     }
+  ],
+  "ks-kindle-scribe-3rd-generation": [
+    {
+      "filename": "Kindle_src_5.19.6_4832210042.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.19.6_4832210042.tar.gz",
+      "version": "5.19.6",
+      "build": "4832210042",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.19.6_4832210042.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.19.5_4794300058.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.19.5_4794300058.tar.gz",
+      "version": "5.19.5",
+      "build": "4794300058",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.19.5_4794300058.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.19.4.0.1_4767210003.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.19.4.0.1_4767210003.tar.gz",
+      "version": "5.19.4.0.1",
+      "build": "4767210003",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.19.4.0.1_4767210003.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.19.3.0.1_4723070002.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.19.3.0.1_4723070002.tar.gz",
+      "version": "5.19.3.0.1",
+      "build": "4723070002",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.19.3.0.1_4723070002.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.19.2_4670800040.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.19.2_4670800040.tar.gz",
+      "version": "5.19.2",
+      "build": "4670800040",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.19.2_4670800040.tar.gz"
+      ],
+      "error": null
+    }
   ]
 }

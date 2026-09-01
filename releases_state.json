@@ -1,1 +1,12 @@
-{}
+{
+  "ks-fire-hd-10-13th-generation": [
+    {
+      "filename": "Fire_HD10_13th_Gen-8.3.3.8-20251223.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/txGNRgRjUSPYfwgPKt49Nrujuj/Fire_HD10_13th_Gen-8.3.3.8-20251223.tar.bz2",
+      "version": "8.3.3.8",
+      "build": "20251223",
+      "uploaded": true,
+      "error": null
+    }
+  ]
+}

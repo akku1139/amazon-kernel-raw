@@ -4554,5 +4554,25 @@
       "assets": [],
       "error": "Download error: 403 Client Error: Forbidden for url: https://kindle-src.s3.amazonaws.com/Kindle_for_Android_3_5_WebKit_src.7z"
     }
+  ],
+  "ks-kindle-for-pc-and-kindle-for-mac": [
+    {
+      "filename": "Kindle_for_PC_and_Mac_1_10_WebKit_src.7z",
+      "url": "https://kindle-src.s3.amazonaws.com/Kindle_for_PC_and_Mac_1_10_WebKit_src.7z",
+      "version": "",
+      "build": "",
+      "uploaded": false,
+      "assets": [],
+      "error": "Download error: 403 Client Error: Forbidden for url: https://kindle-src.s3.amazonaws.com/Kindle_for_PC_and_Mac_1_10_WebKit_src.7z"
+    },
+    {
+      "filename": "Kindle_for_PC_and_Mac_1_9_WebKit_src.7z",
+      "url": "https://kindle-src.s3.amazonaws.com/Kindle_for_PC_and_Mac_1_9_WebKit_src.7z",
+      "version": "",
+      "build": "",
+      "uploaded": false,
+      "assets": [],
+      "error": "Download error: 403 Client Error: Forbidden for url: https://kindle-src.s3.amazonaws.com/Kindle_for_PC_and_Mac_1_9_WebKit_src.7z"
+    }
   ]
 }

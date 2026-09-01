@@ -209,14 +209,30 @@ def save_state_and_push(state: dict, commit_msg: str):
 
 def process_device(tag: str, device_name: str, current_entries: list, state: dict):
     existing = state.get(tag, [])
-    existing_filenames = {e['filename'] for e in existing}
 
-    new_entries = [e for e in current_entries if e['filename'] not in existing_filenames]
-    if not new_entries:
-        logger.info(f"No new entries for {tag}, skipping.")
+    # 処理対象エントリを決定
+    to_process = []
+    for entry in current_entries:
+        filename = entry['filename']
+        # 既存エントリを検索
+        existing_entry = next((e for e in existing if e['filename'] == filename), None)
+
+        if existing_entry is None:
+            # 新規エントリ
+            to_process.append(entry)
+        elif existing_entry.get('uploaded', False) == False and not existing_entry.get('error'):
+            # 未アップロードかつエラーなし（手動で error を null にした場合を含む）
+            # → 再処理対象
+            # 既存の失敗エントリを除去して新しいエントリで置き換える
+            existing = [e for e in existing if e['filename'] != filename]
+            to_process.append(entry)
+        # uploaded == True または error が残っている場合はスキップ
+
+    if not to_process:
+        logger.info(f"No entries to process for {tag}, skipping.")
         return
 
-    logger.info(f"Processing {device_name} (tag: {tag}), {len(new_entries)} new file(s)")
+    logger.info(f"Processing {device_name} (tag: {tag}), {len(to_process)} file(s) to process")
 
     # リリース存在確認と作成
     view_result = subprocess.run(['gh', 'release', 'view', tag], capture_output=True, text=True)

@@ -726,5 +726,74 @@
       ],
       "error": null
     }
+  ],
+  "ks-fire-hd-8-fire-hd-8-plus-10t-527a46f7": [
+    {
+      "filename": "Fire_HD8_10th_Gen-7.3.3.1-20250617.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/5WiKoDQhoAQMROkpXP6yQeLmkZ/Fire_HD8_10th_Gen-7.3.3.1-20250617.tar.bz2",
+      "version": "7.3.3.1",
+      "build": "20250617",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD8_10th_Gen-7.3.3.1-20250617.tar.bz2.part00",
+        "Fire_HD8_10th_Gen-7.3.3.1-20250617.tar.bz2.part01"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_HD8_10th_Gen-7.3.2.9-20240730.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/Q2iSA0qvEnotViL4DxZD08stVQ/Fire_HD8_10th_Gen-7.3.2.9-20240730.tar.bz2",
+      "version": "7.3.2.9",
+      "build": "20240730",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD8_10th_Gen-7.3.2.9-20240730.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_HD8_10th_Gen-7.3.2.9-20231103.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/9OXq0RSjrgQuqrJlQ8itQTSO4r/Fire_HD8_10th_Gen-7.3.2.9-20231103.tar.bz2",
+      "version": "7.3.2.9",
+      "build": "20231103",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD8_10th_Gen-7.3.2.9-20231103.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_HD8_10th_Gen-7.3.2.7-20230127.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/7Ryh5hVFS4sTSSsRUwgqW1bKui/Fire_HD8_10th_Gen-7.3.2.7-20230127.tar.bz2",
+      "version": "7.3.2.7",
+      "build": "20230127",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD8_10th_Gen-7.3.2.7-20230127.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_HD8_10th_Gen-7.3.2.6-20221121.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/cf5NSK7Ew11XFIfIm2gm6IV3ml/Fire_HD8_10th_Gen-7.3.2.6-20221121.tar.bz2",
+      "version": "7.3.2.6",
+      "build": "20221121",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD8_10th_Gen-7.3.2.6-20221121.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_HD8_10th_Gen-7.3.2.4-20220826.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/m0NyvygZjrX955sheShCEC8Zhc/Fire_HD8_10th_Gen-7.3.2.4-20220826.tar.bz2",
+      "version": "7.3.2.4",
+      "build": "20220826",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD8_10th_Gen-7.3.2.4-20220826.tar.bz2"
+      ],
+      "error": null
+    }
   ]
 }

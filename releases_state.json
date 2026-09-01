@@ -70,7 +70,7 @@
       "version": "8.3.3.0",
       "build": "20241028",
       "uploaded": false,
-      "error": "Upload error: unknown"
+      "error": null
     },
     {
       "filename": "Fire_HD10_13th_Gen-8.3.2.7-20241018.tar.bz2",
@@ -78,7 +78,7 @@
       "version": "8.3.2.7",
       "build": "20241018",
       "uploaded": false,
-      "error": "Upload error: unknown"
+      "error": null
     },
     {
       "filename": "Fire_HD10_13th_Gen-8.3.2.7-20240921.tar.bz2",
@@ -6498,7 +6498,7 @@
       "build": "3791510038",
       "uploaded": false,
       "assets": [],
-      "error": "Upload error: unknown"
+      "error": null
     },
     {
       "filename": "Kindle_src_5.12.2.1.1_3720580001.tar.gz",

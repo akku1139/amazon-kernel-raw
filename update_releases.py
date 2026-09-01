@@ -7,6 +7,8 @@ import subprocess
 import tempfile
 import hashlib
 from pathlib import Path
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 from bs4 import BeautifulSoup
@@ -17,6 +19,7 @@ PREFIX = "ks-"
 TAG_MAX_LEN = 40
 ASSET_DIR = Path(tempfile.gettempdir()) / "kindle_src_assets"
 MAX_ASSET_SIZE = 1900 * 1024 * 1024  # 1.9GB（2GB制限に対する余裕）
+MAX_WORKERS = 10
 
 logging.basicConfig(
     level=logging.INFO,
@@ -24,6 +27,10 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S"
 )
 logger = logging.getLogger(__name__)
+
+# スレッド間で共有するロック
+state_lock = threading.Lock()
+git_lock = threading.Lock()
 
 
 def slugify(text: str) -> str:
@@ -94,7 +101,7 @@ def fetch_and_parse() -> dict:
                 'version': version,
                 'build': build,
                 'uploaded': False,
-                'assets': [],          # 実際にアップロードされたファイル名のリスト
+                'assets': [],
                 'error': None
             })
 
@@ -126,7 +133,6 @@ def release_body(device_name: str, entries: list) -> str:
         filename = e['filename']
         url = e['url']
 
-        # アセットリンク構築
         asset_links = []
         assets = e.get('assets') or []
         if e.get('uploaded', False) and assets:
@@ -134,7 +140,6 @@ def release_body(device_name: str, entries: list) -> str:
                 link = f"[{asset_name}](../../releases/download/{tag}/{asset_name})"
                 asset_links.append(link)
         elif not e.get('uploaded', False) and e.get('error'):
-            # 未アップロードでエラーがある場合
             asset_links.append(f"Not uploaded ({e['error']})")
         else:
             asset_links.append("Not uploaded")
@@ -168,13 +173,10 @@ def download_file(url: str, dest: Path):
 
 
 def split_file(src: Path, dest_dir: Path, part_prefix: str) -> list:
-    """ファイルを分割し、分割後のファイルパスのリストを返す"""
     logger.info(f"Splitting {src.name} into parts (max {MAX_ASSET_SIZE} bytes)")
     dest_dir.mkdir(exist_ok=True)
-    # splitコマンド実行
     cmd = ['split', '-b', str(MAX_ASSET_SIZE), '-d', '-a', '2', str(src), str(dest_dir / part_prefix)]
     subprocess.run(cmd, check=True)
-    # 生成されたファイルをリストアップ
     parts = sorted(dest_dir.glob(f"{part_prefix}*"))
     logger.info(f"Split into {len(parts)} parts")
     return parts
@@ -187,19 +189,26 @@ def upload_file(tag: str, local_path: Path):
 
 
 def save_state_and_push(state: dict):
-    with open(STATE_FILE, 'w', encoding='utf-8') as f:
-        json.dump(state, f, indent=2)
-    subprocess.run(['git', 'add', STATE_FILE], check=True)
-    diff = subprocess.run(['git', 'diff', '--cached', '--quiet'], capture_output=True)
-    if diff.returncode != 0:
-        subprocess.run(['git', 'commit', '-m', 'Update release state'], check=True)
-        subprocess.run(['git', 'push'], check=True)
-        logger.info("State committed and pushed")
-    else:
-        logger.debug("No state changes to commit")
+    """状態をファイルに保存し、git commit/pushする。git_lockで直列化"""
+    with git_lock:
+        with open(STATE_FILE, 'w', encoding='utf-8') as f:
+            json.dump(state, f, indent=2)
+        subprocess.run(['git', 'add', STATE_FILE], check=True)
+        diff = subprocess.run(['git', 'diff', '--cached', '--quiet'], capture_output=True)
+        if diff.returncode != 0:
+            subprocess.run(['git', 'commit', '-m', 'Update release state'], check=True)
+            subprocess.run(['git', 'push'], check=True)
+            logger.info("State committed and pushed")
+        else:
+            logger.debug("No state changes to commit")
 
 
 def process_device(tag: str, device_name: str, current_entries: list, state: dict):
+    """
+    1デバイス分の処理（スレッドで実行される）。
+    既存stateを読み、新規ファイルを処理し、最後にstate更新＋コミットする。
+    """
+    # 既存エントリ（stateから取得）
     existing = state.get(tag, [])
     existing_filenames = {e['filename'] for e in existing}
 
@@ -226,85 +235,79 @@ def process_device(tag: str, device_name: str, current_entries: list, state: dic
 
     ASSET_DIR.mkdir(exist_ok=True)
 
+    # 各新規ファイルを処理
     for entry in new_entries:
         filename = entry['filename']
         logger.info(f"--- Processing file: {filename} ---")
 
-        # 過去にアップロード済みのアセットがあるか確認（既存エントリ用）
-        if entry.get('uploaded', False) and entry.get('assets'):
-            # すでにアップロード済みとマークされている
-            logger.info(f"Entry already marked as uploaded with assets: {entry['assets']}")
-        else:
-            # ダウンロード
-            local_path = ASSET_DIR / filename
-            try:
-                download_file(entry['url'], local_path)
-            except Exception as e:
-                logger.error(f"Download failed for {filename}: {e}")
-                entry['uploaded'] = False
-                entry['error'] = f"Download error: {e}"
-                # 状態保存
-                existing.append(entry)
-                state[tag] = sorted(existing, key=version_key, reverse=True)
-                save_state_and_push(state)
-                continue
+        # ダウンロード
+        local_path = ASSET_DIR / filename
+        try:
+            download_file(entry['url'], local_path)
+        except Exception as e:
+            logger.error(f"Download failed for {filename}: {e}")
+            entry['uploaded'] = False
+            entry['error'] = f"Download error: {e}"
+            existing.append(entry)
+            continue
 
-            # ファイルサイズ確認
-            size = local_path.stat().st_size
-            if size > MAX_ASSET_SIZE:
-                # 分割が必要
-                logger.info(f"File size {size} exceeds limit, splitting...")
-                split_prefix = filename + ".part"
-                try:
-                    parts = split_file(local_path, ASSET_DIR, split_prefix)
-                    uploaded_names = []
-                    for part in parts:
-                        part_name = part.name
-                        # 既に存在するか確認
-                        if asset_exists(tag, part_name):
-                            logger.info(f"Part {part_name} already exists, skipping upload.")
-                        else:
-                            upload_file(tag, part)
-                        uploaded_names.append(part_name)
-                    entry['uploaded'] = True
-                    entry['assets'] = uploaded_names
-                    entry['error'] = None
-                except Exception as e:
-                    logger.error(f"Split/upload failed for {filename}: {e}")
-                    entry['uploaded'] = False
-                    entry['error'] = f"Split/upload error: {e}"
-                finally:
-                    # 元ファイルと分割ファイルを削除
-                    if local_path.exists():
-                        local_path.unlink()
-                    for part in ASSET_DIR.glob(split_prefix + "*"):
-                        part.unlink()
-            else:
-                # そのままアップロード
-                if asset_exists(tag, filename):
-                    logger.info(f"Asset {filename} already exists, skipping upload.")
-                    entry['uploaded'] = True
-                    entry['assets'] = [filename]
-                else:
-                    try:
-                        upload_file(tag, local_path)
-                        entry['uploaded'] = True
-                        entry['assets'] = [filename]
-                    except subprocess.CalledProcessError as e:
-                        logger.error(f"Upload failed for {filename}: {e}")
-                        entry['uploaded'] = False
-                        entry['error'] = f"Upload error: {e.stderr.strip() if e.stderr else 'unknown'}"
-                # 一時ファイル削除
+        # ファイルサイズ確認
+        size = local_path.stat().st_size
+        if size > MAX_ASSET_SIZE:
+            # 分割が必要
+            logger.info(f"File size {size} exceeds limit, splitting...")
+            split_prefix = filename + ".part"
+            try:
+                parts = split_file(local_path, ASSET_DIR, split_prefix)
+                uploaded_names = []
+                for part in parts:
+                    part_name = part.name
+                    if asset_exists(tag, part_name):
+                        logger.info(f"Part {part_name} already exists, skipping upload.")
+                    else:
+                        upload_file(tag, part)
+                    uploaded_names.append(part_name)
+                entry['uploaded'] = True
+                entry['assets'] = uploaded_names
+                entry['error'] = None
+            except Exception as e:
+                logger.error(f"Split/upload failed for {filename}: {e}")
+                entry['uploaded'] = False
+                entry['error'] = f"Split/upload error: {e}"
+            finally:
                 if local_path.exists():
                     local_path.unlink()
+                for part in ASSET_DIR.glob(split_prefix + "*"):
+                    part.unlink()
+        else:
+            # そのままアップロード
+            if asset_exists(tag, filename):
+                logger.info(f"Asset {filename} already exists, skipping upload.")
+                entry['uploaded'] = True
+                entry['assets'] = [filename]
+            else:
+                try:
+                    upload_file(tag, local_path)
+                    entry['uploaded'] = True
+                    entry['assets'] = [filename]
+                except subprocess.CalledProcessError as e:
+                    logger.error(f"Upload failed for {filename}: {e}")
+                    entry['uploaded'] = False
+                    entry['error'] = f"Upload error: {e.stderr.strip() if e.stderr else 'unknown'}"
+            if local_path.exists():
+                local_path.unlink()
 
-        # エントリを状態に追加
+        # 処理済みエントリを既存リストに追加
         existing.append(entry)
-        state[tag] = sorted(existing, key=version_key, reverse=True)
-        save_state_and_push(state)
-        logger.info(f"State saved for {filename}")
 
-    # 全ファイル処理後、リリースノート更新
+    # 全ファイル処理後、stateをマージして保存
+    with state_lock:
+        state[tag] = sorted(existing, key=version_key, reverse=True)
+        # 状態保存＆コミット
+        save_state_and_push(state)
+        logger.info(f"State saved for {tag}")
+
+    # リリースノート更新
     logger.info(f"Updating release notes for {tag}")
     body = release_body(device_name, state[tag])
     with tempfile.NamedTemporaryFile('w', delete=False, suffix='.md') as f:
@@ -316,6 +319,7 @@ def process_device(tag: str, device_name: str, current_entries: list, state: dic
 
 
 def main():
+    # 状態読み込み
     state = {}
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, 'r', encoding='utf-8') as f:
@@ -324,9 +328,19 @@ def main():
 
     devices = fetch_and_parse()
 
-    for tag, (device_name, entries) in devices.items():
-        logger.info(f"\n=== Processing device: {device_name} (tag: {tag}) ===")
-        process_device(tag, device_name, entries, state)
+    # 並列処理
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = []
+        for tag, (device_name, entries) in devices.items():
+            future = executor.submit(process_device, tag, device_name, entries, state)
+            futures.append(future)
+
+        # 完了待ち（例外はログ出力）
+        for future in as_completed(futures):
+            try:
+                future.result()
+            except Exception as e:
+                logger.error(f"Device processing failed: {e}")
 
     logger.info("All devices processed.")
 

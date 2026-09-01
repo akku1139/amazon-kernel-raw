@@ -183,6 +183,17 @@
         "Fire_Max11_13th_Gen-8.3.3.6-20250810.tar.bz2"
       ],
       "error": null
+    },
+    {
+      "filename": "Fire_Max11_13th_Gen-8.3.3.5-20250528.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/DdbhJy0mGbWQfHVmmmfThzc6Nx/Fire_Max11_13th_Gen-8.3.3.5-20250528.tar.bz2",
+      "version": "8.3.3.5",
+      "build": "20250528",
+      "uploaded": true,
+      "assets": [
+        "Fire_Max11_13th_Gen-8.3.3.5-20250528.tar.bz2"
+      ],
+      "error": null
     }
   ]
 }

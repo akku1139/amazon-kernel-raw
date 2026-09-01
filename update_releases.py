@@ -254,7 +254,7 @@ def process_device(tag: str, device_name: str, current_entries: list, state: dic
     existing_assets = get_existing_assets(tag)
     logger.info(f"Fetched {len(existing_assets)} existing assets for {tag}")
 
-    for entry in new_entries:
+    for entry in to_process:
         filename = entry['filename']
         logger.info(f"--- Processing file: {filename} ---")
 

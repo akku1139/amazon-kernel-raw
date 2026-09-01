@@ -1803,5 +1803,315 @@
       ],
       "error": null
     }
+  ],
+  "ks-kindle-paperwhite-11th-generation": [
+    {
+      "filename": "Kindle_src_5.19.2_4670760040.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.19.2_4670760040.tar.gz",
+      "version": "5.19.2",
+      "build": "4670760040",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.19.2_4670760040.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.18.5.0.1_4556810001.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.18.5.0.1_4556810001.tar.gz",
+      "version": "5.18.5.0.1",
+      "build": "4556810001",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.18.5.0.1_4556810001.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.18.5_4546060025.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.18.5_4546060025.tar.gz",
+      "version": "5.18.5",
+      "build": "4546060025",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.18.5_4546060025.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.18.4.0.1_4527730001.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.18.4.0.1_4527730001.tar.gz",
+      "version": "5.18.4.0.1",
+      "build": "4527730001",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.18.4.0.1_4527730001.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.18.4_4507460022.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.18.4_4507460022.tar.gz",
+      "version": "5.18.4",
+      "build": "4507460022",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.18.4_4507460022.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.18.3_4466700029.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.18.3_4466700029.tar.gz",
+      "version": "5.18.3",
+      "build": "4466700029",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.18.3_4466700029.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.18.2_4434540025.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.18.2_4434540025.tar.gz",
+      "version": "5.18.2",
+      "build": "4434540025",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.18.2_4434540025.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.18.1_4417540025.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.18.1_4417540025.tar.gz",
+      "version": "5.18.1",
+      "build": "4417540025",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.18.1_4417540025.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.17.1.0.3_4351900007.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.17.1.0.3_4351900007.tar.gz",
+      "version": "5.17.1.0.3",
+      "build": "4351900007",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.17.1.0.3_4351900007.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.17.1_4320360039.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.17.1_4320360039.tar.gz",
+      "version": "5.17.1",
+      "build": "4320360039",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.17.1_4320360039.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.16.21_4289750037.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.16.21_4289750037.tar.gz",
+      "version": "5.16.21",
+      "build": "4289750037",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.16.21_4289750037.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.16.10.0.1_4270270001.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.16.10.0.1_4270270001.tar.gz",
+      "version": "5.16.10.0.1",
+      "build": "4270270001",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.16.10.0.1_4270270001.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.16.9_4246250033.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.16.9_4246250033.tar.gz",
+      "version": "5.16.9",
+      "build": "4246250033",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.16.9_4246250033.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.16.8_4212850015.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.16.8_4212850015.tar.gz",
+      "version": "5.16.8",
+      "build": "4212850015",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.16.8_4212850015.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.16.7_4193160020.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.16.7_4193160020.tar.gz",
+      "version": "5.16.7",
+      "build": "4193160020",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.16.7_4193160020.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.16.6_4169600030.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.16.6_4169600030.tar.gz",
+      "version": "5.16.6",
+      "build": "4169600030",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.16.6_4169600030.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.16.5_4142880042.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.16.5_4142880042.tar.gz",
+      "version": "5.16.5",
+      "build": "4142880042",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.16.5_4142880042.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.16.4_4131240058.tar.gz",
+      "url": "https://s3.amazonaws.com/kindledownloads/Kindle_src_5.16.4_4131240058.tar.gz",
+      "version": "5.16.4",
+      "build": "4131240058",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.16.4_4131240058.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.16.3.1_4126920001.tar.gz",
+      "url": "https://kindledownloads.s3.amazonaws.com/Kindle_src_5.16.3.1_4126920001.tar.gz",
+      "version": "5.16.3.1",
+      "build": "4126920001",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.16.3.1_4126920001.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.16.3_4110140057.tar.gz",
+      "url": "https://kindledownloads.s3.amazonaws.com/Kindle_src_5.16.3_4110140057.tar.gz",
+      "version": "5.16.3",
+      "build": "4110140057",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.16.3_4110140057.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.16.2.1.1_4097480002.tar.gz",
+      "url": "https://kindledownloads.s3.amazonaws.com/Kindle_src_5.16.2.1.1_4097480002.tar.gz",
+      "version": "5.16.2.1.1",
+      "build": "4097480002",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.16.2.1.1_4097480002.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.16.2.1_4064590031.tar.gz",
+      "url": "https://kindledownloads.s3.amazonaws.com/Kindle_src_5.16.2.1_4064590031.tar.gz",
+      "version": "5.16.2.1",
+      "build": "4064590031",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.16.2.1_4064590031.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.15.1.1_3924990005.tar.gz",
+      "url": "https://kindledownloads.s3.amazonaws.com/Kindle_src_5.15.1.1_3924990005.tar.gz",
+      "version": "5.15.1.1",
+      "build": "3924990005",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.15.1.1_3924990005.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.15.1_3889310042.tar.gz",
+      "url": "https://kindledownloads.s3.amazonaws.com/Kindle_src_5.15.1_3889310042.tar.gz",
+      "version": "5.15.1",
+      "build": "3889310042",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.15.1_3889310042.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.14.3.2_3867590003.tar.gz",
+      "url": "https://kindledownloads.s3.amazonaws.com/Kindle_src_5.14.3.2_3867590003.tar.gz",
+      "version": "5.14.3.2",
+      "build": "3867590003",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.14.3.2_3867590003.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.14.3.0.1_3838590001.tar.gz",
+      "url": "https://kindledownloads.s3.amazonaws.com/Kindle_src_5.14.3.0.1_3838590001.tar.gz",
+      "version": "5.14.3.0.1",
+      "build": "3838590001",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.14.3.0.1_3838590001.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.14.2_3807290060.tar.gz",
+      "url": "https://kindledownloads.s3.amazonaws.com/Kindle_src_5.14.2_3807290060.tar.gz",
+      "version": "5.14.2",
+      "build": "3807290060",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.14.2_3807290060.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_5.14.1.1_3783100001.tar.gz",
+      "url": "https://kindledownloads.s3.amazonaws.com/Kindle_src_5.14.1.1_3783100001.tar.gz",
+      "version": "5.14.1.1",
+      "build": "3783100001",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.14.1.1_3783100001.tar.gz"
+      ],
+      "error": null
+    }
   ]
 }

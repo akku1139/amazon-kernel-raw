@@ -4831,5 +4831,18 @@
       "assets": [],
       "error": "Download error: 403 Client Error: Forbidden for url: https://kindlepreviewer.s3.amazonaws.com/qt-everywhere-opensource-src-5.3.1.tar.gz"
     }
+  ],
+  "ks-kindle-comic-creator": [
+    {
+      "filename": "kc2-1.0-opensource.tar.gz",
+      "url": "https://kc2.s3.amazonaws.com/kc2-1.0-opensource.tar.gz",
+      "version": "1.0",
+      "build": "",
+      "uploaded": true,
+      "assets": [
+        "kc2-1.0-opensource.tar.gz"
+      ],
+      "error": null
+    }
   ]
 }

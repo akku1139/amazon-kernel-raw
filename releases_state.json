@@ -4844,5 +4844,18 @@
       ],
       "error": null
     }
+  ],
+  "ks-amazon-halo-app": [
+    {
+      "filename": "app_1_0.tar.bz2",
+      "url": "https://d1ergij2b6wmg5.cloudfront.net/Source+Code+Notices/Health+and+Wellness/app_1_0.tar.bz2",
+      "version": "",
+      "build": "",
+      "uploaded": true,
+      "assets": [
+        "app_1_0.tar.bz2"
+      ],
+      "error": null
+    }
   ]
 }

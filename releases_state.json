@@ -3914,5 +3914,84 @@
       ],
       "error": null
     }
+  ],
+  "ks-kindle-wi-fi-6-e-ink-display-e11ecfd5": [
+    {
+      "filename": "Kindle_src_4.1.4_3543630001.tar.gz",
+      "url": "https://kindledownloads.s3.amazonaws.com/Kindle_src_4.1.4_3543630001.tar.gz",
+      "version": "4.1.4",
+      "build": "3543630001",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_4.1.4_3543630001.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_4.1.3_2692310002.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_4.1.3_2692310002.tar.gz",
+      "version": "4.1.3",
+      "build": "2692310002",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_4.1.3_2692310002.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_4.1.2_2540270001.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_4.1.2_2540270001.tar.gz",
+      "version": "4.1.2",
+      "build": "2540270001",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_4.1.2_2540270001.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_4.1.1_1813030025.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_4.1.1_1813030025.tar.gz",
+      "version": "4.1.1",
+      "build": "1813030025",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_4.1.1_1813030025.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_4.1.0_1615370055.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_4.1.0_1615370055.tar.gz",
+      "version": "4.1.0",
+      "build": "1615370055",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_4.1.0_1615370055.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_4.0.1_1331440003.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_4.0.1_1331440003.tar.gz",
+      "version": "4.0.1",
+      "build": "1331440003",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_4.0.1_1331440003.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_4.0_1308590058.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_4.0_1308590058.tar.gz",
+      "version": "4.0",
+      "build": "1308590058",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_4.0_1308590058.tar.gz"
+      ],
+      "error": null
+    }
   ]
 }

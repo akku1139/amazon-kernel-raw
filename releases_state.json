@@ -79,6 +79,18 @@
       "build": "20241018",
       "uploaded": false,
       "error": "Upload error: unknown"
+    },
+    {
+      "filename": "Fire_HD10_13th_Gen-8.3.2.7-20240921.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/Zb1PnPlgRiwLnkPCJ7dT0xV4xb/Fire_HD10_13th_Gen-8.3.2.7-20240921.tar.bz2",
+      "version": "8.3.2.7",
+      "build": "20240921",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD10_13th_Gen-8.3.2.7-20240921.tar.bz2.part00",
+        "Fire_HD10_13th_Gen-8.3.2.7-20240921.tar.bz2.part01"
+      ],
+      "error": null
     }
   ]
 }

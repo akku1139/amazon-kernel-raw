@@ -47,6 +47,14 @@
       "build": "20250127",
       "uploaded": true,
       "error": null
+    },
+    {
+      "filename": "Fire_HD10_13th_Gen-8.3.3.2-20241122.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/8P2I86iLDGZ44rizo3nuU6T5AC/Fire_HD10_13th_Gen-8.3.3.2-20241122.tar.bz2",
+      "version": "8.3.3.2",
+      "build": "20241122",
+      "uploaded": true,
+      "error": null
     }
   ]
 }

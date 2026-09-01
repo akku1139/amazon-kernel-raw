@@ -2,11 +2,11 @@ name: Update Kindle Source Releases
 
 on:
   schedule:
-    - cron: '0 0 * * *'   # 毎日UTC 0時
-  workflow_dispatch:       # 手動実行
+    - cron: '12 3 * * *'
+  workflow_dispatch:
 
 permissions:
-  contents: write          # リリース作成/更新とstateファイルのコミットに必要
+  contents: write
 
 jobs:
   update-releases:
@@ -27,11 +27,3 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python update_releases.py
-
-      - name: Commit state file if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add releases_state.json
-          git diff --cached --quiet || git commit -m "Update Kindle source release state"
-          git push

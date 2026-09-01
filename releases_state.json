@@ -5048,5 +5048,106 @@
       ],
       "error": null
     }
+  ],
+  "ks-kindle-2nd-generation": [
+    {
+      "filename": "Kindle_src_2.5.8_555370010.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_2.5.8_555370010.tar.gz",
+      "version": "2.5.8",
+      "build": "555370010",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_2.5.8_555370010.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_2.5.7_550650009.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_2.5.7_550650009.tar.gz",
+      "version": "2.5.7",
+      "build": "550650009",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_2.5.7_550650009.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_2.5.4_501100064.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_2.5.4_501100064.tar.gz",
+      "version": "2.5.4",
+      "build": "501100064",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_2.5.4_501100064.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_2.5.2_490480060.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_2.5.2_490480060.tar.gz",
+      "version": "2.5.2",
+      "build": "490480060",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_2.5.2_490480060.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_2.3.3_431100003.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_2.3.3_431100003.tar.gz",
+      "version": "2.3.3",
+      "build": "431100003",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_2.3.3_431100003.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_2.3_399380047.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_2.3_399380047.tar.gz",
+      "version": "2.3",
+      "build": "399380047",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_2.3_399380047.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_2.2.2_388760001.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_2.2.2_388760001.tar.gz",
+      "version": "2.2.2",
+      "build": "388760001",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_2.2.2_388760001.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_2.2.1_375890239.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_2.2.1_375890239.tar.gz",
+      "version": "2.2.1",
+      "build": "375890239",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_2.2.1_375890239.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Kindle_src_2.2_375490138.tar.gz",
+      "url": "https://kindle.s3.amazonaws.com/Kindle_src_2.2_375490138.tar.gz",
+      "version": "2.2",
+      "build": "375490138",
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_2.2_375490138.tar.gz"
+      ],
+      "error": null
+    }
   ]
 }

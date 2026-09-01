@@ -251,5 +251,16 @@
       ],
       "error": null
     }
+  ],
+  "ks-kindle-fire-1st-generation": [
+    {
+      "filename": "KindleFireEmulator_src_1.0.tar.gz",
+      "url": "https://kindle-src.s3.amazonaws.com/KindleFireEmulator_src_1.0.tar.gz",
+      "version": "1.0",
+      "build": "",
+      "uploaded": false,
+      "assets": [],
+      "error": "Download error: 403 Client Error: Forbidden for url: https://kindle-src.s3.amazonaws.com/KindleFireEmulator_src_1.0.tar.gz"
+    }
   ]
 }

@@ -4525,5 +4525,34 @@
       ],
       "error": null
     }
+  ],
+  "ks-kindle-for-android": [
+    {
+      "filename": "Kindle_for_Android_3_8_WebKit_src.7z",
+      "url": "https://s3.amazonaws.com/kindle-src/Kindle_for_Android_3_8_WebKit_src.7z",
+      "version": "",
+      "build": "",
+      "uploaded": false,
+      "assets": [],
+      "error": "Download error: 403 Client Error: Forbidden for url: https://s3.amazonaws.com/kindle-src/Kindle_for_Android_3_8_WebKit_src.7z"
+    },
+    {
+      "filename": "Kindle_for_Android_3_6_WebKit_src.7z",
+      "url": "https://kindle-src.s3.amazonaws.com/Kindle_for_Android_3_6_WebKit_src.7z",
+      "version": "",
+      "build": "",
+      "uploaded": false,
+      "assets": [],
+      "error": "Download error: 403 Client Error: Forbidden for url: https://kindle-src.s3.amazonaws.com/Kindle_for_Android_3_6_WebKit_src.7z"
+    },
+    {
+      "filename": "Kindle_for_Android_3_5_WebKit_src.7z",
+      "url": "https://kindle-src.s3.amazonaws.com/Kindle_for_Android_3_5_WebKit_src.7z",
+      "version": "",
+      "build": "",
+      "uploaded": false,
+      "assets": [],
+      "error": "Download error: 403 Client Error: Forbidden for url: https://kindle-src.s3.amazonaws.com/Kindle_for_Android_3_5_WebKit_src.7z"
+    }
   ]
 }

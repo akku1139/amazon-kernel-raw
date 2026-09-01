@@ -298,6 +298,50 @@
         "Fire_Max11_13th_Gen-8.3.2.3-20240603.tar.bz2.part01"
       ],
       "error": null
+    },
+    {
+      "filename": "Fire_Max11_13th_Gen-8.3.2.2-20240202.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/AeZNxdygr1USuflzLR5ch37ttp/Fire_Max11_13th_Gen-8.3.2.2-20240202.tar.bz2",
+      "version": "8.3.2.2",
+      "build": "20240202",
+      "uploaded": true,
+      "assets": [
+        "Fire_Max11_13th_Gen-8.3.2.2-20240202.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_Max11_13th_Gen-8.3.2.1-20231103.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/PyDTY4iSciydlKXzSN6iqSEXWa/Fire_Max11_13th_Gen-8.3.2.1-20231103.tar.bz2",
+      "version": "8.3.2.1",
+      "build": "20231103",
+      "uploaded": true,
+      "assets": [
+        "Fire_Max11_13th_Gen-8.3.2.1-20231103.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_Max11_13th_Gen-8.3.2.0-20230914.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/bFEOvKroI3LOZsvKnfDIvbn3gJ/Fire_Max11_13th_Gen-8.3.2.0-20230914.tar.bz2",
+      "version": "8.3.2.0",
+      "build": "20230914",
+      "uploaded": true,
+      "assets": [
+        "Fire_Max11_13th_Gen-8.3.2.0-20230914.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_Max11_13th_Gen-8.3.1.9-20230626.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/MGLqxdhS2aeDow8LKE5j2sDxQS/Fire_Max11_13th_Gen-8.3.1.9-20230626.tar.bz2",
+      "version": "8.3.1.9",
+      "build": "20230626",
+      "uploaded": true,
+      "assets": [
+        "Fire_Max11_13th_Gen-8.3.1.9-20230626.tar.bz2"
+      ],
+      "error": null
     }
   ],
   "ks-kindle-fire-1st-generation": [

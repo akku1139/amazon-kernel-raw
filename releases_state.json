@@ -262,6 +262,18 @@
         "Fire_Max11_13th_Gen-8.3.2.7-20241018.tar.bz2.part01"
       ],
       "error": null
+    },
+    {
+      "filename": "Fire_Max11_13th_Gen-8.3.2.7-20240921.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/sA6GMsDivUf8XBvuIDZ3cxAoYV/Fire_Max11_13th_Gen-8.3.2.7-20240921.tar.bz2",
+      "version": "8.3.2.7",
+      "build": "20240921",
+      "uploaded": true,
+      "assets": [
+        "Fire_Max11_13th_Gen-8.3.2.7-20240921.tar.bz2.part00",
+        "Fire_Max11_13th_Gen-8.3.2.7-20240921.tar.bz2.part01"
+      ],
+      "error": null
     }
   ],
   "ks-kindle-fire-1st-generation": [
@@ -861,6 +873,87 @@
       "uploaded": true,
       "assets": [
         "Fire_HD10_9th_Gen-7.3.2.4-20220825.tar.bz2"
+      ],
+      "error": null
+    }
+  ],
+  "ks-fire-hd-10-fire-hd-10-plus-1-7857c0b0": [
+    {
+      "filename": "Fire_HD10-7.3.3.1-20250617.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/k2k5jkgocvaww3SgOjJMkJrykI/Fire_HD10-7.3.3.1-20250617.tar.bz2",
+      "version": "7.3.3.1",
+      "build": "20250617",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD10-7.3.3.1-20250617.tar.bz2.part00",
+        "Fire_HD10-7.3.3.1-20250617.tar.bz2.part01"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_HD10-7.3.3.0-20240730.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/7OU0BzzYt2YlM3MKwchLwgyUHM/Fire_HD10-7.3.3.0-20240730.tar.bz2",
+      "version": "7.3.3.0",
+      "build": "20240730",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD10-7.3.3.0-20240730.tar.bz2.part00",
+        "Fire_HD10-7.3.3.0-20240730.tar.bz2.part01"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_HD10-7.3.2.9-20231103.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/FpXe5HzJiJ5bxuYJyUy0wdXJDM/Fire_HD10-7.3.2.9-20231103.tar.bz2",
+      "version": "7.3.2.9",
+      "build": "20231103",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD10-7.3.2.9-20231103.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_HD10-7.3.2.8-20230325.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/09ajj3gifp8iy0c5wHnwtRMDk7/Fire_HD10-7.3.2.8-20230325.tar.bz2",
+      "version": "7.3.2.8",
+      "build": "20230325",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD10-7.3.2.8-20230325.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_HD10-7.3.2.7-20230127.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/vrE5xcV05a9za4TPRwbcfEWIEp/Fire_HD10-7.3.2.7-20230127.tar.bz2",
+      "version": "7.3.2.7",
+      "build": "20230127",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD10-7.3.2.7-20230127.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_HD10-7.3.2.6-20221121.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/fX8Oef0HfwEDOoUX39u0ks9QhY/Fire_HD10-7.3.2.6-20221121.tar.bz2",
+      "version": "7.3.2.6",
+      "build": "20221121",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD10-7.3.2.6-20221121.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_HD10-7.3.2.4-20220826.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/ZvMowJMLR3lFUR6ZOBSXtvhlj8/Fire_HD10-7.3.2.4-20220826.tar.bz2",
+      "version": "7.3.2.4",
+      "build": "20220826",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD10-7.3.2.4-20220826.tar.bz2"
       ],
       "error": null
     }

@@ -5149,5 +5149,71 @@
       ],
       "error": null
     }
+  ],
+  "ks-react-native-amazon-build": [
+    {
+      "filename": "react-native-android-amazon-0.55.4.tar.gz",
+      "url": "https://s3-us-west-2.amazonaws.com/rn-static-amazon-build/react-native-android-amazon-0.55.4.tar.gz",
+      "version": "0.55.4",
+      "build": "",
+      "uploaded": false,
+      "assets": [],
+      "error": "Download error: 403 Client Error: Forbidden for url: https://s3-us-west-2.amazonaws.com/rn-static-amazon-build/react-native-android-amazon-0.55.4.tar.gz"
+    },
+    {
+      "filename": "react-native-android-amazon-0.55.3.tar.gz",
+      "url": "https://amazon-source-code-downloads.s3.amazonaws.com/react-native/react-native-android-amazon-0.55.3.tar.gz",
+      "version": "0.55.3",
+      "build": "",
+      "uploaded": true,
+      "assets": [
+        "react-native-android-amazon-0.55.3.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "react-native-android-amazon-0.50.4.tar.gz",
+      "url": "https://s3.us-east-2.amazonaws.com/react-native-amazon/react-native-android-amazon-0.50.4.tar.gz",
+      "version": "0.50.4",
+      "build": "",
+      "uploaded": true,
+      "assets": [
+        "react-native-android-amazon-0.50.4.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "react-native-android-amazon-0.42.3.tar.gz",
+      "url": "https://amazon-source-code-downloads.s3.amazonaws.com/react-native/react-native-android-amazon-0.42.3.tar.gz",
+      "version": "0.42.3",
+      "build": "",
+      "uploaded": true,
+      "assets": [
+        "react-native-android-amazon-0.42.3.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "react-native-android-amazon.tar.gz",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/Native-Android/9RifJprK95vCvohSxlSsAU040A/react-native-android-amazon.tar.gz",
+      "version": "",
+      "build": "",
+      "uploaded": true,
+      "assets": [
+        "react-native-android-amazon.tar.gz"
+      ],
+      "error": null
+    },
+    {
+      "filename": "react-native-android-amazon.tar.gz",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/Native-Android/ANIxGfD1bgGH5Lfyxfa0Ov8qKh/react-native-android-amazon.tar.gz",
+      "version": "",
+      "build": "",
+      "uploaded": true,
+      "assets": [
+        "react-native-android-amazon.tar.gz"
+      ],
+      "error": null
+    }
   ]
 }

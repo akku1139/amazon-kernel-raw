@@ -4664,5 +4664,16 @@
       "assets": [],
       "error": "Download error: 403 Client Error: Forbidden for url: https://kkbc.s3.amazonaws.com/kkbc-1.0-opensource.tar.gz"
     }
+  ],
+  "ks-kindle-textbook-creator": [
+    {
+      "filename": "qt-everywhere-opensource-src-5.3.1.tar.gz",
+      "url": "https://authoring-tools.s3.amazonaws.com/qt-everywhere-opensource-src-5.3.1.tar.gz",
+      "version": "5.3.1",
+      "build": "",
+      "uploaded": false,
+      "assets": [],
+      "error": "Download error: 403 Client Error: Forbidden for url: https://authoring-tools.s3.amazonaws.com/qt-everywhere-opensource-src-5.3.1.tar.gz"
+    }
   ]
 }

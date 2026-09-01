@@ -91,6 +91,18 @@
         "Fire_HD10_13th_Gen-8.3.2.7-20240921.tar.bz2.part01"
       ],
       "error": null
+    },
+    {
+      "filename": "Fire_HD10_13th_Gen-8.3.2.4-20240603.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/SAUUwx010tDNw2FKEpduboZDrm/Fire_HD10_13th_Gen-8.3.2.4-20240603.tar.bz2",
+      "version": "8.3.2.4",
+      "build": "20240603",
+      "uploaded": true,
+      "assets": [
+        "Fire_HD10_13th_Gen-8.3.2.4-20240603.tar.bz2.part00",
+        "Fire_HD10_13th_Gen-8.3.2.4-20240603.tar.bz2.part01"
+      ],
+      "error": null
     }
   ]
 }

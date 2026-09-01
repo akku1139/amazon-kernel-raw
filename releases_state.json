@@ -250,6 +250,18 @@
         "Fire_Max11_13th_Gen-8.3.3.0-20241028.tar.bz2.part01"
       ],
       "error": null
+    },
+    {
+      "filename": "Fire_Max11_13th_Gen-8.3.2.7-20241018.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/iFrtzPix2Fb5hnHxrUhHmX2Q5n/Fire_Max11_13th_Gen-8.3.2.7-20241018.tar.bz2",
+      "version": "8.3.2.7",
+      "build": "20241018",
+      "uploaded": true,
+      "assets": [
+        "Fire_Max11_13th_Gen-8.3.2.7-20241018.tar.bz2.part00",
+        "Fire_Max11_13th_Gen-8.3.2.7-20241018.tar.bz2.part01"
+      ],
+      "error": null
     }
   ],
   "ks-kindle-fire-1st-generation": [
@@ -393,6 +405,64 @@
       "uploaded": true,
       "assets": [
         "Kindle_src_5.19.2_4670800040.tar.gz"
+      ],
+      "error": null
+    }
+  ],
+  "ks-fire-7-9th-generation": [
+    {
+      "filename": "Fire_7_9th_Gen-7.3.3.1-20250617.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/ODeS7F911DagoGYgq9EMkQQ8of/Fire_7_9th_Gen-7.3.3.1-20250617.tar.bz2",
+      "version": "7.3.3.1",
+      "build": "20250617",
+      "uploaded": true,
+      "assets": [
+        "Fire_7_9th_Gen-7.3.3.1-20250617.tar.bz2.part00",
+        "Fire_7_9th_Gen-7.3.3.1-20250617.tar.bz2.part01"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_7_9th_Gen-7.3.2.9-20231103.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/PfCPTY3CFCKaOkqQ6f2oUl9JBM/Fire_7_9th_Gen-7.3.2.9-20231103.tar.bz2",
+      "version": "7.3.2.9",
+      "build": "20231103",
+      "uploaded": true,
+      "assets": [
+        "Fire_7_9th_Gen-7.3.2.9-20231103.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_7_9th_Gen-7.3.2.7-20230127.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/jVDZtnd4Sbg7QD87C08eCs0rlP/Fire_7_9th_Gen-7.3.2.7-20230127.tar.bz2",
+      "version": "7.3.2.7",
+      "build": "20230127",
+      "uploaded": true,
+      "assets": [
+        "Fire_7_9th_Gen-7.3.2.7-20230127.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_7_9th_Gen-7.3.2.6-20221121.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/VTqGBpflyTWlmC2HN8VLp4cOCt/Fire_7_9th_Gen-7.3.2.6-20221121.tar.bz2",
+      "version": "7.3.2.6",
+      "build": "20221121",
+      "uploaded": true,
+      "assets": [
+        "Fire_7_9th_Gen-7.3.2.6-20221121.tar.bz2"
+      ],
+      "error": null
+    },
+    {
+      "filename": "Fire_7_9th_Gen-7.3.2.4-20220825.tar.bz2",
+      "url": "https://fireos-tablet-src.s3.amazonaws.com/dGnllNA9MEzYa9YCfvxXQVJXnR/Fire_7_9th_Gen-7.3.2.4-20220825.tar.bz2",
+      "version": "7.3.2.4",
+      "build": "20220825",
+      "uploaded": true,
+      "assets": [
+        "Fire_7_9th_Gen-7.3.2.4-20220825.tar.bz2"
       ],
       "error": null
     }

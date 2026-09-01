@@ -6496,8 +6496,10 @@
       "url": "https://kindledownloads.s3.amazonaws.com/Kindle_src_5.12.2.2_3791510038.tar.gz",
       "version": "5.12.2.2",
       "build": "3791510038",
-      "uploaded": false,
-      "assets": [],
+      "uploaded": true,
+      "assets": [
+        "Kindle_src_5.12.2.2_3791510038.tar.gz"
+      ],
       "error": null
     },
     {

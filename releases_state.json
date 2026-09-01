@@ -3136,5 +3136,31 @@
       ],
       "error": null
     }
+  ],
+  "ks-kindle-x-migu": [
+    {
+      "filename": "kindle_XMigu_src-5.7.2.8-20201109.tar.bz2",
+      "url": "https://fireos-eink-src.s3.amazonaws.com/c7z55LaRbs9wFyBXIUd5m8sFhZ/kindle_XMigu_src-5.7.2.8-20201109.tar.bz2",
+      "version": "5.7.2.8",
+      "build": "20201109",
+      "uploaded": true,
+      "assets": [
+        "kindle_XMigu_src-5.7.2.8-20201109.tar.bz2.part00",
+        "kindle_XMigu_src-5.7.2.8-20201109.tar.bz2.part01"
+      ],
+      "error": null
+    },
+    {
+      "filename": "kindle_XMigu_src-5.7.2.8-20201008.tar.bz2",
+      "url": "https://fireos-eink-src.s3.amazonaws.com/SnAPFcrqHhkcsDWLmpEK3xbpSO/kindle_XMigu_src-5.7.2.8-20201008.tar.bz2",
+      "version": "5.7.2.8",
+      "build": "20201008",
+      "uploaded": true,
+      "assets": [
+        "kindle_XMigu_src-5.7.2.8-20201008.tar.bz2.part00",
+        "kindle_XMigu_src-5.7.2.8-20201008.tar.bz2.part01"
+      ],
+      "error": null
+    }
   ]
 }

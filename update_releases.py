@@ -18,7 +18,7 @@ STATE_FILE = "releases_state.json"
 PREFIX = "ks-"
 TAG_MAX_LEN = 40
 ASSET_DIR = Path(tempfile.gettempdir()) / "kindle_src_assets"
-MAX_ASSET_SIZE = 1900 * 1024 * 1024  # 1.9GB（2GB制限に対する余裕）
+MAX_ASSET_SIZE = 1900 * 1024 * 1024  # 1.9GB
 MAX_WORKERS = 10
 
 logging.basicConfig(
@@ -28,8 +28,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# スレッド間で共有するロック
-state_lock = threading.Lock()
+# スレッド間共有ロック
+state_lock = threading.RLock()   # 再入可能ロック
 git_lock = threading.Lock()
 
 
@@ -151,15 +151,15 @@ def release_body(device_name: str, entries: list) -> str:
     return "\n".join(lines)
 
 
-def asset_exists(tag: str, asset_name: str) -> bool:
+def get_existing_assets(tag: str) -> set:
+    """指定タグのリリースに存在するアセット名のセットを返す（キャッシュ用）"""
     result = subprocess.run(
         ['gh', 'release', 'view', tag, '--json', 'assets', '--jq', '.assets[].name'],
         capture_output=True, text=True
     )
     if result.returncode != 0:
-        return False
-    assets = result.stdout.splitlines()
-    return asset_name in assets
+        return set()
+    return set(result.stdout.splitlines())
 
 
 def download_file(url: str, dest: Path):
@@ -188,27 +188,26 @@ def upload_file(tag: str, local_path: Path):
     logger.info(f"Uploaded {local_path.name}")
 
 
-def save_state_and_push(state: dict):
-    """状態をファイルに保存し、git commit/pushする。git_lockで直列化"""
-    with git_lock:
+def save_state_and_push(state: dict, commit_msg: str):
+    """
+    状態をファイルに保存し、git commit/pushする。
+    state_lock (RLock) を内部で取得し、git_lockでgit操作を直列化する。
+    """
+    with state_lock:
         with open(STATE_FILE, 'w', encoding='utf-8') as f:
             json.dump(state, f, indent=2)
+    with git_lock:
         subprocess.run(['git', 'add', STATE_FILE], check=True)
         diff = subprocess.run(['git', 'diff', '--cached', '--quiet'], capture_output=True)
         if diff.returncode != 0:
-            subprocess.run(['git', 'commit', '-m', 'Update release state'], check=True)
+            subprocess.run(['git', 'commit', '-m', commit_msg], check=True)
             subprocess.run(['git', 'push'], check=True)
-            logger.info("State committed and pushed")
+            logger.info(f"State committed: {commit_msg}")
         else:
             logger.debug("No state changes to commit")
 
 
 def process_device(tag: str, device_name: str, current_entries: list, state: dict):
-    """
-    1デバイス分の処理（スレッドで実行される）。
-    既存stateを読み、新規ファイルを処理し、最後にstate更新＋コミットする。
-    """
-    # 既存エントリ（stateから取得）
     existing = state.get(tag, [])
     existing_filenames = {e['filename'] for e in existing}
 
@@ -219,7 +218,7 @@ def process_device(tag: str, device_name: str, current_entries: list, state: dic
 
     logger.info(f"Processing {device_name} (tag: {tag}), {len(new_entries)} new file(s)")
 
-    # リリース存在確認
+    # リリース存在確認と作成
     view_result = subprocess.run(['gh', 'release', 'view', tag], capture_output=True, text=True)
     release_exists = view_result.returncode == 0
 
@@ -235,10 +234,25 @@ def process_device(tag: str, device_name: str, current_entries: list, state: dic
 
     ASSET_DIR.mkdir(exist_ok=True)
 
-    # 各新規ファイルを処理
+    # リリースの既存アセット一覧をキャッシュ
+    existing_assets = get_existing_assets(tag)
+    logger.info(f"Fetched {len(existing_assets)} existing assets for {tag}")
+
     for entry in new_entries:
         filename = entry['filename']
         logger.info(f"--- Processing file: {filename} ---")
+
+        # 事前チェック：既にアセットが存在するか（分割前のファイル名で）
+        if filename in existing_assets:
+            logger.info(f"Asset {filename} already exists (pre-check), skipping download.")
+            entry['uploaded'] = True
+            entry['assets'] = [filename]
+            existing.append(entry)
+            # 状態更新＆コミット
+            with state_lock:
+                state[tag] = sorted(existing, key=version_key, reverse=True)
+            save_state_and_push(state, f"Add {filename} to {tag} (already exists)")
+            continue
 
         # ダウンロード
         local_path = ASSET_DIR / filename
@@ -249,9 +263,12 @@ def process_device(tag: str, device_name: str, current_entries: list, state: dic
             entry['uploaded'] = False
             entry['error'] = f"Download error: {e}"
             existing.append(entry)
+            with state_lock:
+                state[tag] = sorted(existing, key=version_key, reverse=True)
+            save_state_and_push(state, f"Mark {filename} as download failed")
             continue
 
-        # ファイルサイズ確認
+        # サイズ確認
         size = local_path.stat().st_size
         if size > MAX_ASSET_SIZE:
             # 分割が必要
@@ -262,10 +279,11 @@ def process_device(tag: str, device_name: str, current_entries: list, state: dic
                 uploaded_names = []
                 for part in parts:
                     part_name = part.name
-                    if asset_exists(tag, part_name):
+                    if part_name in existing_assets:
                         logger.info(f"Part {part_name} already exists, skipping upload.")
                     else:
                         upload_file(tag, part)
+                        existing_assets.add(part_name)
                     uploaded_names.append(part_name)
                 entry['uploaded'] = True
                 entry['assets'] = uploaded_names
@@ -281,13 +299,14 @@ def process_device(tag: str, device_name: str, current_entries: list, state: dic
                     part.unlink()
         else:
             # そのままアップロード
-            if asset_exists(tag, filename):
+            if filename in existing_assets:
                 logger.info(f"Asset {filename} already exists, skipping upload.")
                 entry['uploaded'] = True
                 entry['assets'] = [filename]
             else:
                 try:
                     upload_file(tag, local_path)
+                    existing_assets.add(filename)
                     entry['uploaded'] = True
                     entry['assets'] = [filename]
                 except subprocess.CalledProcessError as e:
@@ -297,15 +316,11 @@ def process_device(tag: str, device_name: str, current_entries: list, state: dic
             if local_path.exists():
                 local_path.unlink()
 
-        # 処理済みエントリを既存リストに追加
+        # 状態更新＆コミット（ファイル単位）
         existing.append(entry)
-
-    # 全ファイル処理後、stateをマージして保存
-    with state_lock:
-        state[tag] = sorted(existing, key=version_key, reverse=True)
-        # 状態保存＆コミット
-        save_state_and_push(state)
-        logger.info(f"State saved for {tag}")
+        with state_lock:
+            state[tag] = sorted(existing, key=version_key, reverse=True)
+        save_state_and_push(state, f"Process {filename} for {tag}")
 
     # リリースノート更新
     logger.info(f"Updating release notes for {tag}")
@@ -319,7 +334,6 @@ def process_device(tag: str, device_name: str, current_entries: list, state: dic
 
 
 def main():
-    # 状態読み込み
     state = {}
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, 'r', encoding='utf-8') as f:
@@ -328,14 +342,12 @@ def main():
 
     devices = fetch_and_parse()
 
-    # 並列処理
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = []
         for tag, (device_name, entries) in devices.items():
             future = executor.submit(process_device, tag, device_name, entries, state)
             futures.append(future)
 
-        # 完了待ち（例外はログ出力）
         for future in as_completed(futures):
             try:
                 future.result()

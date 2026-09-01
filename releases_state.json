@@ -4653,5 +4653,16 @@
       ],
       "error": null
     }
+  ],
+  "ks-kid-s-book-creator": [
+    {
+      "filename": "kkbc-1.0-opensource.tar.gz",
+      "url": "https://kkbc.s3.amazonaws.com/kkbc-1.0-opensource.tar.gz",
+      "version": "1.0",
+      "build": "",
+      "uploaded": false,
+      "assets": [],
+      "error": "Download error: 403 Client Error: Forbidden for url: https://kkbc.s3.amazonaws.com/kkbc-1.0-opensource.tar.gz"
+    }
   ]
 }
